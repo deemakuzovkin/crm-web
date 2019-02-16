@@ -1,0 +1,28 @@
+<div class="col-md-8 order-md-1">
+  <h4 class="mb-3">Расчет НДС</h4>
+  <form class="needs-validation" novalidate="">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="firstName">Сумма с НДС</label>
+        <input class="form-control" id="sumWithNds"
+               required
+               value="{{sumWithNds | currency}}"
+               (keyup)="setsumWithNds($event.target.value)">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <label for="lastName">Ставка %</label>
+        <input type="text" class="form-control" id="nds" required
+               value="{{nds | percent}}"
+               (keyup)="setNds($event.target.value)">
+        <div class="invalid-feedback">
+          Valid last name is required.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h4 class="col-md-2">НДС: {{resultNds | currency}}</h4>
+    </div>
+  </form>
+</div>
